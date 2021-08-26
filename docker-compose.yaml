@@ -8,8 +8,14 @@ services:
       - http-service
     ports:
       - 443:443
+    networks:
+      - revproxy
   http-service:
     image: nginx
     volumes:
       - ./http-service/index.html:/www/data/index.html
       - ./http-service/nginx.conf:/etc/nginx/nginx.conf
+    networks:
+      - revproxy
+networks:
+  revproxy: {}
