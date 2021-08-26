@@ -7,7 +7,7 @@ services:
     depends_on:
       - http-service
     ports:
-      - 443:443
+      - 8443:443
     networks:
       - revproxy
   http-service:
